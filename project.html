@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project — Jueky</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="index.html">JUEKY<span>®</span></a>
+  <a class="back" href="index.html">← Back to work</a>
+</header>
+
+<main class="case">
+  <div class="case-top">
+    <p class="eyebrow" id="category">PROJECT</p>
+    <h1 id="title">Project Title</h1>
+    <p class="case-intro" id="description">Project description.</p>
+  </div>
+
+  <div class="case-hero" id="heroImage"></div>
+
+  <div class="case-meta">
+    <div><small>ROLE</small><strong id="role"></strong></div>
+    <div><small>YEAR</small><strong id="year"></strong></div>
+    <div><small>TOOLS</small><strong id="tools"></strong></div>
+  </div>
+
+  <section class="case-body">
+    <div><h2>About the project</h2></div>
+    <div><p id="bodyText"></p></div>
+  </section>
+
+  <div class="case-images">
+    <div class="placeholder">ADD PROJECT IMAGE</div>
+    <div class="placeholder">ADD PROJECT IMAGE</div>
+  </div>
+</main>
+
+<footer>© 2026 Jueky — Graphic Designer</footer>
+<script>
+const projects = {
+  "super-premium": {
+    title:"Super Premium Fusion", category:"Packaging / Branding",
+    description:"A premium flour packaging direction designed to communicate quality, strength and modern baking.",
+    role:"Graphic Designer / Art Direction", year:"2026", tools:"Illustrator · Photoshop",
+    text:"Replace this paragraph with your actual project story: brief, design challenge, concept, development and final outcome.",
+    cls:"thumb-1"
+  },
+  "baking-cuan": {
+    title:"Baking Cuan", category:"Campaign / Art Direction",
+    description:"A playful campaign concept connecting baking creativity with business opportunity and profit.",
+    role:"Graphic Designer", year:"2026", tools:"Illustrator · Photoshop · After Effects",
+    text:"Explain the campaign objective, visual direction, key message, executions and your contribution.",
+    cls:"thumb-2"
+  },
+  "grand-baking": {
+    title:"Grand Baking Demo", category:"Event / Campaign",
+    description:"Event visual communication developed around baking education, community and brand experience.",
+    role:"Graphic Designer", year:"2025–2026", tools:"Illustrator · Photoshop",
+    text:"Add the event background, target audience, visual concept, key applications and results.",
+    cls:"thumb-3"
+  },
+  "social": {
+    title:"Social Media Design", category:"Digital / Content",
+    description:"A selection of social media assets designed for consistent and engaging brand communication.",
+    role:"Graphic Designer", year:"2025–2026", tools:"Photoshop · Illustrator",
+    text:"Describe the content strategy, visual system, formats and production process.",
+    cls:"thumb-4"
+  },
+  "motion": {
+    title:"Motion Graphic", category:"Motion / Video",
+    description:"Motion design projects combining typography, product visuals and animation.",
+    role:"Motion Graphic Designer", year:"2025–2026", tools:"After Effects · Premiere Pro",
+    text:"Explain the animation concept, storyboard, timing, transitions, sound design and final output.",
+    cls:"thumb-5"
+  },
+  "branding": {
+    title:"Brand Identity", category:"Branding / Identity",
+    description:"Visual identity exploration translating brand values into a coherent visual system.",
+    role:"Graphic Designer", year:"2026", tools:"Illustrator · Photoshop",
+    text:"Describe the brand problem, concept, visual identity system and applications.",
+    cls:"thumb-6"
+  }
+};
+const id = new URLSearchParams(location.search).get("id") || "super-premium";
+const p = projects[id] || projects["super-premium"];
+document.title = p.title + " — Jueky";
+document.getElementById("title").textContent=p.title;
+document.getElementById("category").textContent=p.category;
+document.getElementById("description").textContent=p.description;
+document.getElementById("role").textContent=p.role;
+document.getElementById("year").textContent=p.year;
+document.getElementById("tools").textContent=p.tools;
+document.getElementById("bodyText").textContent=p.text;
+document.getElementById("heroImage").className="case-hero "+p.cls;
+</script>
+</body>
+</html>
